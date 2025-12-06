@@ -1,1 +1,20 @@
-<p>otp-input works!</p>
+@if(!submitted) {
+  <div class="otp-container">
+    <h3>Enter OTP</h3>
+    <p>Please enter the 5-digit OTP sent to your mobile number.</p>
+    <div class="otp-inputs">
+      @for (digit of otpDigits; track $index) {
+        <input #otpInput
+        type="text"
+        maxlength="1"
+        [id]="'otp-'+$index"
+        [(ngModel)] = "otpDigits[$index]"
+        (input) = "onInput($event, $index)"
+        (keydown) = "onkeyDown($event, $index)"
+        pattern="[0-9]"
+        inputmode="numeric"
+        />
+      }
+    </div>
+  </div>
+}

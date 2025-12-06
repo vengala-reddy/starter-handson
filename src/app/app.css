@@ -1,0 +1,13 @@
+.bordered{
+  border: 1px dashed black;
+  background-color: lightgray;
+}
+
+.colored{
+  color: white;
+  background-color: teal;
+}
+
+.border-blue{
+  border: 2px solid blue;
+}
