@@ -1,0 +1,22 @@
+@if(!submitted) {
+<form action="" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<div class="form-group">
+  <label for="userName">User Name</label>
+  <input type="text" name="userName" id="userName" formControlName="userName">
+</div>
+<div class="form-group">
+  <label for="password">password</label>
+  <input type="password" name="password" id="password" formControlName="password">
+</div>
+<button type="submit">Login</button>
+</form>
+}
+@if (submitted) {
+  @if(isAuthenticated){
+    <h4>Welcome {{userName}}</h4>
+  }
+  @else {
+    <h4>Invalid login!! please try again</h4>
+  }
+  <button type="button" (click)="submitted = false">Back</button>
+}
