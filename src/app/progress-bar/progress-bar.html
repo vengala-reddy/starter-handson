@@ -1,0 +1,14 @@
+<p>progress-bar works!</p>
+<main>
+  @for (bar of bars; track $index) {
+  <div class="progress-bar-container">
+
+    <div
+      class="progress-bar"
+      [style.width.%]="bar"
+      >
+      {{bar}}%
+    </div>
+  </div>
+}
+</main>
